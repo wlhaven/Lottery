@@ -18,7 +18,7 @@ public class TableDialog extends JDialog {
         add(reportTitle, BorderLayout.NORTH);
         add(tablePanel, BorderLayout.CENTER);
         this.add(new JScrollPane(reportTable));
-        setSize(500, 375);
+        setSize(550, 450);
         setVisible(true);
     }
 

@@ -34,4 +34,5 @@ public class ResultsDisplay {
     public int getTimesDrawnColumnNumber() {
         return timesDrawnColumnNumber;
     }
+
 }

@@ -32,7 +32,7 @@ public class MainFrame extends JFrame {
         super("Lottery Games");
         setLayout(new BorderLayout());
         setJMenuBar(createMenuBar());
-        setSize(800, 600);
+        setSize(800, 640);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -96,7 +96,7 @@ public class MainFrame extends JFrame {
         totalCountbyDraw.add(countByDrawPowerBall);
         totalCountbyDraw.add(countByDrawMegaMillion);
 
-        //Remove code to enable when item is ready to execute
+        //Remove below code to enable menu items when item is ready to execute
         exportDataItem.setEnabled(false);
         showPowerBallItem.setEnabled(false);
         showMegaMillionItem.setEnabled(false);
@@ -263,6 +263,7 @@ public class MainFrame extends JFrame {
                         resultsDefaultTableModel.addRow(row);
                     }
                     resultsTable.setModel(resultsDefaultTableModel);
+                    resultsTable.setAutoCreateRowSorter(true);
                     tableDialog = new TableDialog(this,  resultsTable, "Megabucks:  Total times drawn by Position");
                     tableDialog.setLocationRelativeTo(this);
                     tableDialog.setVisible(true);
@@ -274,6 +275,9 @@ public class MainFrame extends JFrame {
         return menuBar;
     }
 
+    public Class<?> getColumnClass(int columnIndex) {
+         return resultsDefaultTableModel.getValueAt(0,columnIndex).getClass();
+    }
     protected DefaultTableModel SetupTables(JTable resultsTable, int reportColor) {
         ResultsDisplay resultsDisplay = new ResultsDisplay();
         resultsDefaultTableModel = new DefaultTableModel() {
