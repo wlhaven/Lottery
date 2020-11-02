@@ -13,7 +13,9 @@ public class TableDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
 	final JPanel tablePanel = new JPanel(new BorderLayout());
     public TableDialog(JFrame parent, JTable reportTable, String labelText) {
-        super(parent, labelText, false);
+        super(parent, "Lottery Report", false);
+        JLabel reportTitle = new JLabel(labelText, SwingConstants.CENTER);
+        add(reportTitle, BorderLayout.NORTH);
         add(tablePanel, BorderLayout.CENTER);
         this.add(new JScrollPane(reportTable));
         setSize(500, 375);

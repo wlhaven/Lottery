@@ -1,0 +1,10 @@
+# Default ignored files
+# Java files
+*.class
+
+# IntelliJ files
+.idea/
+out/*
+!out/.gitkeep
+
+*.iml
